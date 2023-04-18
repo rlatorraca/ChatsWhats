@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: chatgpt
+      
+    ports:
+      - 3306:3306
+    volumes:
+      - ./.docker/mysql:/var/lib/mysql
